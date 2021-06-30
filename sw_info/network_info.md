@@ -19,9 +19,9 @@ Please check the documentation at [raspberrypi.org](https://www.raspberrypi.org/
 ### Login trough SSH
 The AGoRA Walker raspberry has SSH enabled to provide remote access from other computers. Once you have connected to the wireless network, you can login with the following credentials:
 
-* IP = 192.168.4.1
-* username = pi
-* password = admin
+* **IP** = 192.168.4.1
+* **username** = pi
+* **password** = admin
 
 From a windows client you can use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
