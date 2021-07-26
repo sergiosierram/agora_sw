@@ -28,4 +28,23 @@ From a windows client you can use [PuTTY](https://www.chiark.greenend.org.uk/~sg
 From a linux client you can use `ssh pi@192.168.4.1`.
 
 ## Ethernet Interface
-This interface works normally and provides internet access to the wireless access point. In some cases, this interface will not automatically detect when an ethernet cable is plugged in. This can be easily solved by restarting the interface with `sudo ifdown eth0` and then `sudo ifup eth0`.
+This interface is used by the LiDAR LMS111. It is configured to be static and thus it does not provide internet access even if an ethernet cable is connected.
+
+If you require to change the configuration of this interface, check the file located at: `/etc/network/interfaces`. For the purpose of clarification, this interface can be used in two ways:
+
+* **static**: To retrieve data from the LiDAR or other static purposes.
+`
+auto eth0
+iface eth0 inet static
+        address 169.254.97.100
+        netmask 255.255.0.0
+
+`
+* **dhcp**: To obtain internet access.
+`
+auto eth0
+allow-hotplug eth0
+iface eth0 inet dhcp
+`
+
+In some cases, this interface will not automatically detect when an ethernet cable is plugged in. This can be easily solved by restarting the interface with `sudo ifdown eth0` and then `sudo ifup eth0`.
