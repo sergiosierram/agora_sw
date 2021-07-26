@@ -33,18 +33,17 @@ This interface is used by the LiDAR LMS111. It is configured to be static and th
 If you require to change the configuration of this interface, check the file located at: `/etc/network/interfaces`. For the purpose of clarification, this interface can be used in two ways:
 
 * **static**: To retrieve data from the LiDAR or other static purposes.
-`
+```
 auto eth0
 iface eth0 inet static
         address 169.254.97.100
         netmask 255.255.0.0
-
-`
+```
 * **dhcp**: To obtain internet access.
-`
+```
 auto eth0
 allow-hotplug eth0
 iface eth0 inet dhcp
-`
+```
 
 In some cases, this interface will not automatically detect when an ethernet cable is plugged in. This can be easily solved by restarting the interface with `sudo ifdown eth0` and then `sudo ifup eth0`.
