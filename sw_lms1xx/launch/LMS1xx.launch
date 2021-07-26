@@ -1,8 +1,13 @@
+<?xml version="1.0"?>
+
 <launch>
-  <arg name="host" default="192.168.1.14" />
+  <arg name="host" default="169.254.150.139" />
   <arg name="publish_min_range_as_inf" default="false" />
-  <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node">
+
+  <node pkg="agora_sw_lms1xx" name="lms1xx" type="LMS1xx_node">
+    <remap from="scan" to="scan/sicklms"/>
     <param name="host" value="$(arg host)" />
     <param name="publish_min_range_as_inf" value="$(arg publish_min_range_as_inf)" />
   </node>
+  
 </launch>
