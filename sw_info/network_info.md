@@ -46,7 +46,7 @@ allow-hotplug eth0
 iface eth0 inet dhcp
 ```
 
-It is worth mentioning that only one this option can be used. This means that one of these code block needs to be commented with "#" while the other one is active.
+It is worth mentioning that only one of these options can be used at the same time. This means that one of these code blocks needs to be commented with "#" while the other one is active.
 
 In some cases, this interface will not automatically detect when an ethernet cable is plugged in. This can be easily solved by restarting the interface with `sudo ifdown eth0` and then `sudo ifup eth0`.
 
