@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot_namespace" default="/agora_sw"/>
+	
+	<arg name="laser_sweep_enabled" 	default="true"/>
+	<arg name="laser_sicktim_enabled" 	default="true"/>
+	<arg name="laser_sicklms_enabled" 	default="true"/>
+	
+	<group ns="$(arg robot_namespace)">
+		<!-- Nodes required for Scanse Sweep  -->
+		<group if="$(arg laser_sweep_enabled)">
+			<include file="$(find agora_sw_sweep)/launch/sweep2scan.launch" />
+		</group>
+		
+		<!-- Nodes required for SICK TiM 551  -->
+		<group if="$(arg laser_sicktim_enabled)">
+			<include file="$(find agora_sw_sick_tim)/launch/sick_tim551_invert.launch">
+				<arg name="robot_namespace" default="$(arg robot_namespace)"/>
+			</include>
+		</group>
+		
+		<!-- Nodes required for SICK LMS1xx -->
+		<group if="$(arg laser_sicklms_enabled)">
+			<include file="$(find agora_sw_lms1xx)/launch/LMS1xx.launch" />
+		</group>
+		
+	</group>
+
+</launch>
