@@ -5,6 +5,7 @@
 	<arg name="laser_sweep_enabled" 	default="true"/>
 	<arg name="laser_sicktim_enabled" 	default="true"/>
 	<arg name="laser_sicklms_enabled" 	default="true"/>
+	<arg name="cam_user_enabled" 		default="true"/>
 	
 	<group ns="$(arg robot_namespace)">
 		<!-- Nodes required for Scanse Sweep  -->
@@ -22,6 +23,13 @@
 		<!-- Nodes required for SICK LMS1xx -->
 		<group if="$(arg laser_sicklms_enabled)">
 			<include file="$(find agora_sw_lms1xx)/launch/LMS1xx.launch" />
+		</group>
+		
+		<!-- Nodes required for USB Cam -->
+		<group if="$(arg cam_user_enabled)">
+			<include file="$(find agora_sw_usb_cam)/launch/usb_cam-test.launch">
+				<arg name="cam_name" default="user_cam"/>
+			</include>
 		</group>
 		
 	</group>
