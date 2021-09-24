@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="frc_acquisition" pkg="agora_sw_force" type="frc_acquirer_daq_v2.py" output="screen">
+		<rosparam file="$(find agora_sw_force)/config/frc_acquirer.yaml" command="load"/>
+	</node>
+</launch>

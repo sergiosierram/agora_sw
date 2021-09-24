@@ -5,7 +5,8 @@
 	<arg name="laser_sweep_enabled" 	default="true"/>
 	<arg name="laser_sicktim_enabled" 	default="true"/>
 	<arg name="laser_sicklms_enabled" 	default="true"/>
-	<arg name="cam_user_enabled" 		default="true"/>
+	<arg name="cam_user_enabled" 		default="false"/>
+	<arg name="frc_sensors_enabled"		default="true"/>
 	
 	<group ns="$(arg robot_namespace)">
 		<!-- Nodes required for Scanse Sweep  -->
@@ -30,6 +31,11 @@
 			<include file="$(find agora_sw_usb_cam)/launch/usb_cam-test.launch">
 				<arg name="cam_name" default="user_cam"/>
 			</include>
+		</group>
+
+		<!-- Nodes required for Force Sensors -->
+		<group if="$(arg frc_sensors_enabled)">
+			<include file="$(find agora_sw_force)/launch/frc_sensors.launch"/>
 		</group>
 		
 	</group>

@@ -1,0 +1,8 @@
+frc_left_topic: "frc_left"
+frc_right_topic: "frc_right"
+frc_topic: "frc"
+freq: 40
+t_calibration: 1
+calibrate: true
+filter: true
+filter_window: 10
