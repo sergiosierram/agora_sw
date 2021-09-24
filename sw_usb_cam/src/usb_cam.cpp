@@ -52,7 +52,7 @@
 #include <boost/lexical_cast.hpp>
 #include <sensor_msgs/fill_image.h>
 
-#include <usb_cam/usb_cam.h>
+#include <agora_sw_usb_cam/usb_cam.h>
 
 #define CLEAR(x) memset (&(x), 0, sizeof (x))
 
