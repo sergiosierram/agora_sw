@@ -2,9 +2,9 @@
 <launch>
 	<arg name="robot_namespace" default="/agora_sw"/>
 	
-	<arg name="laser_sweep_enabled" 	default="true"/>
-	<arg name="laser_sicktim_enabled" 	default="true"/>
-	<arg name="laser_sicklms_enabled" 	default="true"/>
+	<arg name="laser_sweep_enabled" 	default="false"/>
+	<arg name="laser_sicktim_enabled" 	default="false"/>
+	<arg name="laser_sicklms_enabled" 	default="false"/>
 	<arg name="cam_user_enabled" 		default="false"/>
 	<arg name="frc_sensors_enabled"		default="true"/>
 	
